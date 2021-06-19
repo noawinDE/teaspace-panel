@@ -1,0 +1,9 @@
+{
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "plesk/api-php-lib": "^1.0",
+        "phpmailer/phpmailer": "^6.1",
+        "mollie/mollie-api-php": "^2.0",
+        "planetteamspeak/ts3-php-framework": "^1.1"
+    }
+}

@@ -1,0 +1,30 @@
+body {
+	background-color: #94A0AD;
+}
+.wrapper {
+	background-color: #94A0AD;
+}
+.content-wrapper {
+	background-color: #94A0AD;
+}
+.main-header {
+	background-color: #94A0AD;
+	color: #FFF;
+}
+.card  {
+	background-color: #d6d6d6;
+	
+}
+.card-body {
+	background-color: #d6d6d6;
+	
+}
+.card .list-group-item {
+	background-color: #d6d6d6;
+	
+}
+
+.main-footer {
+	background-color: #94A0AD;
+	color: #FFF;
+}
