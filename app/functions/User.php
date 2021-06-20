@@ -161,25 +161,12 @@ class User extends Controller
     {
         $count = 0;
 
-        $SQL = self::db()->prepare('SELECT * FROM `webspace` WHERE `user_id` = :user_id AND `deleted_at` IS NULL AND `state` = "active"');
-        $SQL->execute(array(":user_id" => $user_id));
-        $count = $count + $SQL->rowCount();
-
-        $SQL = self::db()->prepare('SELECT * FROM `teamspeaks` WHERE `user_id` = :user_id AND `deleted_at` IS NULL AND `state` = "active"');
-        $SQL->execute(array(":user_id" => $user_id));
-        $count = $count + $SQL->rowCount();
-
+       
         $SQL = self::db()->prepare('SELECT * FROM `teaspeaks` WHERE `user_id` = :user_id AND `deleted_at` IS NULL AND `state` = "active"');
         $SQL->execute(array(":user_id" => $user_id));
         $count = $count + $SQL->rowCount();
 
-        $SQL = self::db()->prepare('SELECT * FROM `store_products` WHERE `user_id` = :user_id AND `deleted_at` IS NULL AND `state` = "active"');
-        $SQL->execute(array(":user_id" => $user_id));
-        $count = $count + $SQL->rowCount();
-		
-		$SQL = self::db()->prepare('SELECT * FROM `bots` WHERE `user_id` = :user_id AND `deleted_at` IS NULL AND `state` = "active"');
-        $SQL->execute(array(":user_id" => $user_id));
-        $count = $count + $SQL->rowCount();
+       
 		
 		
 
@@ -191,25 +178,13 @@ class User extends Controller
     {
         $count = 0;
 
-        $SQL = self::db()->prepare('SELECT * FROM `webspace` WHERE  `state` = "active"');
-        $SQL->execute();
-        $count = $count + $SQL->rowCount();
-
-        $SQL = self::db()->prepare('SELECT * FROM `teamspeaks` WHERE  `state` = "active"');
-        $SQL->execute();
-        $count = $count + $SQL->rowCount();
+       
 
         $SQL = self::db()->prepare('SELECT * FROM `teaspeaks` WHERE  `state` = "active"');
         $SQL->execute();
         $count = $count + $SQL->rowCount();
 
-        $SQL = self::db()->prepare('SELECT * FROM `store_products` WHERE  `state` = "active"');
-        $SQL->execute();
-        $count = $count + $SQL->rowCount();
-		
-		$SQL = self::db()->prepare('SELECT * FROM `bots` WHERE  `state` = "active"');
-        $SQL->execute();
-        $count = $count + $SQL->rowCount();
+       
 
         return $count;
     }
@@ -219,21 +194,7 @@ class User extends Controller
     {
         $price = 0;
 
-        $SQL = self::db()->prepare("SELECT * FROM `webspace` WHERE `user_id` = :user_id AND `deleted_at` IS NULL AND `state` = 'active'");
-        $SQL->execute(array(":user_id" => $user_id));
-        if ($SQL->rowCount() != 0) {
-            while ($row = $SQL->fetch(PDO::FETCH_ASSOC)) {
-                $price = $price + $row['price'];
-            }
-        }
-
-        $SQL = self::db()->prepare("SELECT * FROM `teamspeaks` WHERE `user_id` = :user_id AND `deleted_at` IS NULL AND `state` = 'active'");
-        $SQL->execute(array(":user_id" => $user_id));
-        if ($SQL->rowCount() != 0) {
-            while ($row = $SQL->fetch(PDO::FETCH_ASSOC)) {
-                $price = $price + round($row['price'] * $row['slots'],2);
-            }
-        }
+       
 
         $SQL = self::db()->prepare("SELECT * FROM `teaspeaks` WHERE `user_id` = :user_id AND `deleted_at` IS NULL AND `state` = 'active'");
         $SQL->execute(array(":user_id" => $user_id));
@@ -243,21 +204,7 @@ class User extends Controller
             }
         }
 
-        $SQL = self::db()->prepare("SELECT * FROM `store_products` WHERE `user_id` = :user_id AND `deleted_at` IS NULL AND `state` = 'active'");
-        $SQL->execute(array(":user_id" => $user_id));
-        if ($SQL->rowCount() != 0) {
-            while ($row = $SQL->fetch(PDO::FETCH_ASSOC)) {
-                $price = $price + $row['price'];
-            }
-        }
-
-		$SQL = self::db()->prepare("SELECT * FROM `bots` WHERE `user_id` = :user_id AND `deleted_at` IS NULL AND `state` = 'active'");
-        $SQL->execute(array(":user_id" => $user_id));
-        if ($SQL->rowCount() != 0) {
-            while ($row = $SQL->fetch(PDO::FETCH_ASSOC)) {
-                $price = $price + $row['price'];
-            }
-        }
+       
 
         return $price;
     }
