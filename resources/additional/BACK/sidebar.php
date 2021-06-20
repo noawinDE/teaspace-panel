@@ -112,26 +112,7 @@
 							<p>Benutzerverwaltung</p>
                         </a>
                     </li>
-				 <li class="nav-item has-treeview ">
-            <a class="nav-link" href="#" class="nav-link ">
-              <i class="nav-fas fa fa-user"></i>
-              <p>
-                Teaspeak
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              
-						<li class="nav-item"><a  class="nav-link active" href="<?= $helper->url(); ?>team/teaserver">Teaspeaks</a></li>
-						<?php if($user->isAdmin($_COOKIE['session_token'])){ ?>
-                        <li class="nav-item" ><a class="nav-link active" href="<?= $helper->url(); ?>team/teanodes">Nodes</a></a></li>
-						<?php } ?>
-                        
-                        
-                      
-
-            </ul>
-          </li>
+				
 		  
 <?php if($user->isAdmin($_COOKIE['session_token'])){ ?>
 <div class="dropdown-divider"></div>  
