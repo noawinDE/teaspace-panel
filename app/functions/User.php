@@ -267,13 +267,7 @@ class User extends Controller
 	
 	
 	
-	public function getserviceNew($user_id)
-    {
-        $SQL = self::db()->prepare('SELECT * FROM `store_products` WHERE `state` = :state');
-        $SQL->execute(array(":state" => 'pending'));
-
-        return $SQL->rowCount();
-    }
+	
 
     public function addMoney($money, $user_id){
         $SQL = self::db()->prepare("SELECT * FROM `users` WHERE `id` = :id");

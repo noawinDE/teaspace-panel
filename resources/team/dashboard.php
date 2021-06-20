@@ -64,19 +64,7 @@ $product_count = 0;
           <!-- /.col --> 
 
 			
-			<div class="col-12 col-sm-6 col-md-3">           
-<div class="info-box mb-3">
-              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-ticket-alt"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Offene Service</span>
-                <span class="info-box-number"><?= $user->getserviceNew($userid); ?></span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col --> 
+			
 			
 			
 
@@ -92,14 +80,12 @@ $product_count = 0;
 
                             if(isset($_POST['updateProductPrices'])){
 
-                                $SQL = $db -> prepare("UPDATE `product_prices` SET `price` = :price WHERE `name` = 'TEAMSPEAK'");
-                                $SQL->execute(array(":price" => $_POST['teamspeak']));
+                               
 
                                 $SQL = $db -> prepare("UPDATE `product_prices` SET `price` = :price WHERE `name` = 'TEASPEAK'");
                                 $SQL->execute(array(":price" => $_POST['teaspeak']));
 
-								$SQL = $db -> prepare("UPDATE `product_prices` SET `price` = :price WHERE `name` = 'TS3AUDIOBOT'");
-                                $SQL->execute(array(":price" => $_POST['bot']));
+								
 
                                 echo sendSuccess('Die einstellungen wurden gespeichert');
                                 header('refresh:3;url='.$url.'team/dashboard');
@@ -115,14 +101,10 @@ $product_count = 0;
 
                        
                             <form method="post">
-                                <label class="text-dark">Teamspeak:</label>
-                                <input name="teamspeak" class="form-control" value="<?= $site->getProductPrice('TEAMSPEAK'); ?>">
-                                <br>
+                               
                                 <label class="text-dark">Teaspeak:</label>
                                 <input name="teaspeak" class="form-control" value="<?= $site->getProductPrice('TEASPEAK'); ?>">
-                                <br>
-								<label class="text-dark">Ts3AudioBot:</label>
-                                <input name="bot" class="form-control" value="<?= $site->getProductPrice('TS3AUDIOBOT'); ?>">
+                                
                                 <br>
 								<?php if($user->isInTeam($_COOKIE['session_token'])){ ?>
 								
