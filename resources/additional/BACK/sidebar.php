@@ -116,42 +116,23 @@
             <a class="nav-link" href="#" class="nav-link ">
               <i class="nav-fas fa fa-user"></i>
               <p>
-                Ts3AudioBots
+                Teaspeak
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               
-						<li class="nav-item"><a  class="nav-link active" href="<?= $helper->url(); ?>team/bots">Bots</a></li>
+						<li class="nav-item"><a  class="nav-link active" href="<?= $helper->url(); ?>team/teaserver">Teaspeaks</a></li>
 						<?php if($user->isAdmin($_COOKIE['session_token'])){ ?>
-                        <li class="nav-item" ><a class="nav-link active" href="<?= $helper->url(); ?>team/nodes">Nodes</a></a></li>
+                        <li class="nav-item" ><a class="nav-link active" href="<?= $helper->url(); ?>team/teanodes">Nodes</a></a></li>
 						<?php } ?>
-                        <li class="nav-item" ><a class="nav-link active" href="<?= $helper->url(); ?>team/streams">Streams</a></a></li>
+                        
                         
                       
 
             </ul>
           </li>
-		  <!--li class="nav-item has-treeview ">
-            <a class="nav-link" href="#" class="nav-link ">
-              <i class="nav-fas fa fa-user"></i>
-              <p>
-                Tea(m)speak
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              
-						<li class="nav-item"><a  class="nav-link active" href="<?= $helper->url(); ?>team/bots">Bots</a></li>
-						<?php if($user->isAdmin($_COOKIE['session_token'])){ ?>
-                        <li class="nav-item" ><a class="nav-link active" href="<?= $helper->url(); ?>team/nodes">Nodes</a></a></li>
-						<?php } ?>
-                        <li class="nav-item" ><a class="nav-link active" href="<?= $helper->url(); ?>team/streams">Streams</a></a></li>
-                        
-                      
-
-            </ul>
-          </li-->
+		  
 <?php if($user->isAdmin($_COOKIE['session_token'])){ ?>
 <div class="dropdown-divider"></div>  
 		
@@ -162,12 +143,7 @@
 							<p>Transaktionen</p>
                         </a>
                     </li>
-                        <li class="nav-item" >
-                        <a class="nav-link" href="<?= $helper->url(); ?>team/service">
-                            <i class="menu-icon fas fa-server"></i>
-							<p>Service</p>
-                        </a>
-                    </li>
+                    
 					<li class="nav-item" >
                         <a class="nav-link" href="<?= $helper->url(); ?>team/news">
                             <i class="menu-icon fas fa-newspaper"></i>
