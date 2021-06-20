@@ -41,10 +41,6 @@ CREATE TABLE `affiliates` (
 -- Daten für Tabelle `affiliates`
 --
 
-INSERT INTO `affiliates` (`id`, `affiliate_id`, `affiliated_id`, `amount`, `state`, `created_at`, `updated_at`) VALUES
-(1, 'nukemc', '102', '0.00', 'pending', '2020-11-01 14:26:41', '2020-11-01 14:26:41'),
-(2, 'Nils', '100', '0.00', 'pending', '2020-11-02 18:25:16', '2020-11-02 18:25:38'),
-(3, '1870', '107', '0.00', 'pending', '2020-11-05 16:02:23', '2020-11-05 16:02:23');
 
 -- --------------------------------------------------------
 
